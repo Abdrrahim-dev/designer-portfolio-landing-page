@@ -16,6 +16,25 @@ ul {
   width: 90vw;
   margin: auto;
 }
+.title {
+  margin: 70px 0;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: relative;
+}
+.title span {
+  color: var(--main-clr);
+}
+.title::before {
+  content: "";
+  width: 90px;
+  height: 2px;
+  background-color: var(--main-clr);
+  position: absolute;
+  bottom: -15px;
+  left: 2px;
+}
 /* variables */
 :root {
   --main-clr: #00bcd4;
@@ -142,10 +161,43 @@ header .image img {
   max-width: 80%;
   border-radius: 50%;
 }
+@media (max-width: 991px) {
+  header .image {
+    width: 100px;
+    height: 100px;
+  }
+  header .image img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 850px) {
+  header .image {
+    display: none;
+  }
+  header a {
+    font-size: 22px;
+    padding: 0 10px;
+    text-align: center;
+  }
+  header a[href="#testimonials"],
+  header a[href="#skills"] {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  header a {
+    font-size: 19px;
+  }
+}
 /* about */
 .about {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+@media (max-width: 350px) {
+  .about {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
 .about .card {
   display: block;
@@ -184,7 +236,20 @@ header .image img {
   border: none;
   border-radius: 5px;
   background-color: var(--main-clr);
+  border: 2px solid var(--main-clr);
+
   color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.about .about button:hover {
+  transform: scale(1.05);
+}
+.about .about button:active {
+  background-color: #fff;
+  color: var(--main-clr);
+  border: 2px solid var(--main-clr);
+  transform: scale(1.05);
 }
 .info p {
   color: #777;
@@ -210,6 +275,11 @@ header .image img {
   align-items: center;
   font-size: 22px;
 }
+.info .social a:hover {
+  color: var(--main-clr);
+  background-color: #fff;
+  border: 2px solid var(--main-clr);
+}
 .experience .box {
   padding: 0 20px 40px;
   position: relative;
@@ -234,4 +304,71 @@ header .image img {
   color: #777;
   border-bottom: 1px solid var(--main-clr);
   padding-bottom: 20px;
+}
+/* statistics bar */
+.stat {
+  background-color: #020225;
+}
+.stat .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+.stat .container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.stat .container .box i {
+  font-size: 45px;
+  padding-right: 20px;
+}
+.stat .container .box .text {
+  padding: 25px 20px;
+  border-left: 1px solid #fff;
+}
+.stat .container .box .text h2 {
+  color: var(--main-clr);
+  font-size: 33px;
+}
+/* portfolio */
+.portfolio {
+  min-height: 100vh;
+}
+.portfolio .container .imgs-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.portfolio .container .imgs-box img {
+  width: 100%;
+}
+/* services */
+.services {
+  min-height: 100vh;
+}
+.services .container .serv-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.services .container .serv-box .card {
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ddd;
+  text-align: center;
+  background-color: #020225;
+  color: #fff;
+}
+.services .container .serv-box .card i {
+  font-size: 90px;
+  margin: 60px 0px;
+}
+.services .container .serv-box .card h2 {
+  color: var(--main-clr);
+  font-size: 35px;
+  font-weight: 500;
+  text-shadow: 0 4px 20px #fff;
 }
