@@ -311,15 +311,23 @@ header .image img {
 }
 .stat .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 50px 0;
+  text-align: center;
+}
+@media (max-width: 465px) {
+  .stat .container {
+    flex-direction: column;
+  }
 }
 .stat .container .box {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
+  margin: 20px 0;
 }
 .stat .container .box i {
   font-size: 45px;
@@ -346,9 +354,6 @@ header .image img {
   width: 100%;
 }
 /* services */
-.services {
-  min-height: 100vh;
-}
 .services .container .serv-box {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -361,14 +366,197 @@ header .image img {
   text-align: center;
   background-color: #020225;
   color: #fff;
+  transition: 0.3s;
+  position: relative;
 }
 .services .container .serv-box .card i {
   font-size: 90px;
   margin: 60px 0px;
+  transition: 0.3s;
 }
 .services .container .serv-box .card h2 {
   color: var(--main-clr);
   font-size: 35px;
   font-weight: 500;
   text-shadow: 0 4px 20px #fff;
+  transition: 0.3s;
+}
+.services .container .serv-box .card:hover i {
+  color: transparent;
+}
+.services .container .serv-box .card:hover h2 {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width: 1px;
+  font-weight: 900;
+}
+/* hire me */
+.hire {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #020225;
+  margin-top: 100px;
+}
+.hire h2 {
+  font-size: 42px;
+  font-weight: 400;
+  color: #fff;
+}
+.hire button {
+  padding: 10px 13px;
+  border: 1px solid var(--main-clr);
+  background-color: var(--main-clr);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 300;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.hire button a {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 300;
+}
+.hire button:hover {
+  background-color: #fff;
+}
+.hire button:hover a {
+  color: var(--main-clr);
+}
+/* testimonials */
+.testimonials {
+}
+.testimonials .test-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.testimonials .test-box .card {
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ddd;
+  text-align: center;
+}
+.testimonials .test-box .card img {
+  width: 50%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.testimonials .test-box .card h2 {
+  font-size: 27px;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+.testimonials .test-box .card h2::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--main-clr);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.testimonials .test-box .card q {
+  font-style: italic;
+  color: #777;
+}
+.testimonials .test-box .card .rate {
+  margin-top: 15px;
+}
+.testimonials .test-box .card .rate i {
+  color: #f6d000;
+}
+/* contact */
+.contact {
+}
+.contact .text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact .text .info {
+  border: 1px solid #777;
+  padding: 20px 40px;
+}
+.contact .text .info p {
+  line-height: 3;
+}
+.contact .text .info span {
+}
+.contact .text .social {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+.contact .text .social a {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--main-clr);
+  border-radius: 50%;
+  border: 2px solid var(--main-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+.contact .text .social a:hover {
+  background-color: #fff;
+  color: var(--main-clr);
+}
+/* footer */
+footer {
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  background-color: #020225;
+}
+footer .left {
+  color: #fff;
+  font-size: 23px;
+}
+footer .left span {
+  color: var(--main-clr);
+  font-weight: bold;
+}
+footer .right {
+  display: flex;
+  align-items: center;
+}
+footer .right a {
+  font-size: 25px;
+  color: #fff;
+  padding: 0 15px;
+}
+
+@media (max-width: 767px) {
+  .contact .text {
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+  .contact .text .social a {
+    margin: 6px;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+  }
 }
